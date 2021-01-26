@@ -83,7 +83,7 @@ a {
 /* Homepage */
 .home {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: 1fr auto auto 1fr 1fr;
     width: 100%;
 }
 
@@ -95,6 +95,7 @@ a {
     width: 60rem;
     padding: 0.1rem;
     margin-top: 2rem;
+    margin-left: 2rem;
     font-family: sans-serif;
     background-color: #366F95;
     display: grid;
@@ -143,6 +144,7 @@ a {
 }
 
 .featuredTitle {
+    letter-spacing: 2px;
     text-shadow: 0.35px 0.35px black;
     font-size: 0.9em;
     font-family: sans-serif;
@@ -150,7 +152,7 @@ a {
     color: white;
     grid-column: 2 / 2;
     grid-row: 1 / 1;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
 }
 
 .featuredSlideshow {
@@ -315,3 +317,160 @@ a {
     background-color: #9098a0;
 }
 
+.homeSidebar {
+    font-family: sans-serif;
+    width: 210px;
+    grid-row: 1  /  1;
+    grid-column: 2 / 2;
+}
+
+.homeSidebar img {
+    margin-top: 1rem;
+    width: 210px;
+    height: 115px;
+    margin-left: 10px;
+}
+
+.homeSidebar a {
+    color: #B8B6B4;
+    font-size: 0.7em;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
+}
+
+.homeSidebar li {
+    font-size: 0.8em;
+    color: #66C0F4;
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
+}
+
+.homeSidebarItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contentContainer {
+    grid-column: 3 / 3;
+}
+
+.specialOffers {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    grid-template-rows: repeat(3, auto);
+    margin-top: 2rem;
+}
+
+.specialOffersTitle {
+    letter-spacing: 2px;
+    text-shadow: 0.35px 0.35px black;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: auto;
+    color: white;
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    margin: 0 0 1rem 0;
+    grid-column: 2 /2;
+    grid-row: 1 / 1;
+}
+
+.weeklongDeals {
+    background: url(https://store.akamai.steamstatic.com/public/images/v6/temp/spotlight_weeklong_deals.jpg?v=2);
+    height: 393px;
+    width: 306px;
+    grid-row: 2 / 4;
+    grid-column: 2 / 2;
+    margin-right: 0.75rem;
+    box-shadow: 0 0 10px black;
+}
+
+.offer1 > img, .offer2 > img, .offer3 > img, .offer4 > img {
+    height: 143px;
+    width: 306px;
+}
+
+ .offer2, .offer4 {
+    background-color: #366F95;
+} 
+
+.offer1, .offer3 {
+    background-color: #B0DCF4;
+}
+
+.offer1 {
+    grid-row: 2 / 2;
+    grid-column: 3 /3;
+    margin-right: 0.75rem;
+    margin-bottom:  0.75rem;
+    box-shadow: 0 0 5px black;
+    height: 187px;
+} 
+
+.offer2 {
+    width: 306px;
+    grid-row: 2 / 2;
+    grid-column: 4 / 4;
+    margin-bottom:  0.75rem;
+    box-shadow: 0 0 5px black;
+    height: 187px;
+} 
+
+.offer3 {
+    width: 306px;
+    grid-row: 3 / 3;
+    grid-column: 3 / 3;
+    box-shadow: 0 0 5px black;
+    height: 187px;
+} 
+
+.offer4 {
+    width: 306px;
+    grid-row: 3 / 3;
+    grid-column: 4 / 4;
+    box-shadow: 0 0 5px black;
+    height: 187px;
+} 
+
+.dealpercentage {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    color: #A4D007;
+    height: 34px;
+    width: 70px;
+    background-color:#4C6B22;
+    float: right;
+}
+
+.oldprice, .newprice {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0;
+}
+
+.dealprice {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    color: #ACDBF5;
+    background-color: #141F2CCC;
+    height: 34px;
+    width: 56px;
+    float: right;
+    font-size: 0.9em;
+}
+
+.oldprice {
+    color: #577180;
+    text-decoration-line: line-through;
+}
+
+.contentContainer {
+    margin-top: 0.05rem;
+    margin-right: 0.5rem;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 
@@ -23,6 +24,12 @@ import seaofthievesslideshow3 from '../assets/img/home/seaofthievesslideshow3.jp
 import seaofthievesslideshow4 from '../assets/img/home/seaofthievesslideshow4.jpg'
 import arrowright from '../assets/img/home/arrowright.png'
 import arrowleft from '../assets/img/home/arrowleft.png'
+import steamcards from '../assets/img/home/steamcards.png'
+import weeklongdeals from '../assets/img/home/weeklongdeals.png'
+import huntdeal from '../assets/img/home/huntdeal.jpg'
+import originsdeal from '../assets/img/home/originsdeal.jpg'
+import reddeaddeal from '../assets/img/home/reddeaddeal.jpg'
+import outerworldsdeal from '../assets/img/home/outerworldsdeal.jpg'
 
 function Home() {
     const [slidePreview, setSlidePreview] = useState({})
@@ -125,6 +132,7 @@ function Home() {
     return(
         <div className="home">
 
+        <div className="contentContainer">
             <div className="topbar">
                 <ul className="topbarButtons">
                     <li className="yourStoreBtn"><a href="/">Your Store</a></li>
@@ -161,6 +169,88 @@ function Home() {
                     <div className="featuredSlider2" datatype={slider2} onClick={e => sliderIndex(e)}></div>
                     <div className="featuredSlider3" datatype={slider3} onClick={e => sliderIndex(e)}></div>
                 </div>
+            </div>
+
+            <div className="specialOffers">
+                <p className="specialOffersTitle">SPECIAL OFFERS</p>
+                <div className="weeklongDeals"><img src={weeklongdeals} alt=""></img></div>
+                    <div className="offer1">
+                        <img src={huntdeal} alt=""></img>
+                        <div className="contentContainer">
+                            <div className="dealprice">
+                                <p className="oldprice">$40.00</p>
+                                <p className="newprice">$19.99</p>
+                            </div>
+                            <div className="dealpercentage">-50%</div>
+                        </div>
+                    </div>
+                <div className="offer2">
+                    <img src={originsdeal} alt=""></img>
+                    <div className="contentContainer">
+                            <div className="dealprice">
+                                <p className="oldprice">$59.99</p>
+                                <p className="newprice">$11.99</p>
+                            </div>
+                            <div className="dealpercentage">-80%</div>
+                        </div>
+                    </div>
+                <div className="offer3">
+                    <img src={reddeaddeal} alt=""></img>
+                    <div className="contentContainer">
+                            <div className="dealprice">
+                                <p className="oldprice">$60.00</p>
+                                <p className="newprice">$40.19</p>
+                            </div>
+                            <div className="dealpercentage">-33%</div>
+                        </div>
+                    </div>
+                <div className="offer4">
+                    <img src={outerworldsdeal} alt=""></img>
+                    <div className="contentContainer">
+                            <div className="dealprice">
+                                <p className="oldprice">$59.98</p>
+                                <p className="newprice">$29.99</p>
+                            </div>
+                            <div className="dealpercentage">-50%</div>
+                        </div>
+                    </div>
+            </div>
+
+            </div>
+
+            <div className="homeSidebar">
+                <img src={steamcards} alt=""></img>
+                <ul className="homeSidebarItems">
+                    <a>GIFT CARDS</a>
+                        <li>Now Available on Steam</li>
+                    <a>RECOMMENDED</a>
+                        <li>By Friends</li>
+                        <li>By Curators</li>
+                        <li>Tags</li>
+                    <a>DISCOVERY QUEUES</a>
+                        <li>Recommendations</li>
+                        <li>New Releases</li>
+                    <a>BROWSE CATEGORIES</a>
+                        <li>Top Sellers</li>
+                        <li>New Releases</li>
+                        <li>Upcoming</li>
+                        <li>Specials</li>
+                        <li>Virtual Reality</li>
+                        <li>Controller Friendly</li>
+                    <a>BROWSE BY GENRE</a>
+                        <li>Free To Play</li>
+                        <li>Early Access</li>
+                        <li>Action</li>
+                        <li>Adventure</li>
+                        <li>Casual</li>
+                        <li>Indie</li>
+                        <li>Massively Multiplayer</li>
+                        <li>Racing</li>
+                        <li>RPG</li>
+                        <li>Simulation</li>
+                        <li>Sports</li>
+                        <li>Strategy</li>
+                </ul>
             </div>
 
         </div>
