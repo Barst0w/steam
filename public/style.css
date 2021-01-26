@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    background: radial-gradient(#1A4862, #1B2838);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    display: grid;
+    grid-template-columns:1fr auto 1fr;
+    height: 6.5rem;
+    width: 100%;
+    background-color: #171A21;
+}
+
+.navContent {
+    color: #B8B6B4;
+    font-family: sans-serif;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(3, auto);
+    grid-column: 2 / 2;
+}
+
+.navbuttons1, .navbuttons2 {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+}
+
+.navbuttons1 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 1fr auto 1fr;
+    grid-column: 2 / 2;
+    padding: 0;
+    grid-gap: 2rem;
+    font-size: 0.9em;
+}
+
+.navbuttons2 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column: 3 / 3;
+    padding: 0.5rem 0 0 10rem;
+    grid-gap: 2rem;
+    font-size: 0.8em;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+    grid-column: 1 / 1;
+    margin: 1.6rem 1rem 0 0;
+}
+
+.storeBtn, .communityBtn, .aboutBtn, .supportBtn {
+    grid-row: 2 / 2;
+}
+
+.installSteamBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.8em;
+    width: 7em;
+    background-color: #5C7E10;
+    color: #E5E4DC;
+}
+
+.loginBtn, .languageBtn {
+    margin-top: 0.2rem;
+}
+
+.navContent a {
+    color: #B8B6B4;
+}
+
+/* Homepage */
+.home {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+}
+
+.topbar {
+    box-shadow: 0 0 1px black;
+    display: flex;
+    justify-self: center;
+    height: 2rem;
+    width: 60rem;
+    padding: 0.1rem;
+    margin-top: 2rem;
+    font-family: sans-serif;
+    background-color: #366F95;
+    display: grid;
+    grid-auto-columns: auto 1fr auto;
+    grid-column: 3 / 3;
+}
+
+.topbarButtons {
+    padding: 0;
+    display: flex;
+    align-self: center;
+    font-size: 0.82em;
+    text-shadow: 0.35px 0.35px black;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style: none;
+    text-align: center;
+    margin: 0 1rem 0rem 1rem;
+    grid-column: 1 / 1;
+    grid-gap: 2.5rem;
+}
+
+.topbarSearch {
+    border: 0.05em solid black;
+    height: 80%;
+    width: 12rem;
+    display: flex;
+    align-self: center;
+    background-color: #316182;
+    grid-column: 3 / 3;
+    border-radius: 4%;
+}
+
+.topbarSearch::placeholder {
+    color: #243849;
+    font-size: 1rem;
+    padding: 5%;
+}
+
+.topbar a {
+    color: #D9DADD;
+}
+
+.yourStoreBtn:hover, .browseBtn:hover, .pointsBtn:hover, .newsBtn:hover, .labsBtn:hover {
+    background-color: white;
+}
+
+.featuredTitle {
+    text-shadow: 0.35px 0.35px black;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: auto;
+    color: white;
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    margin: 0 0 0.5rem 0;
+}
+
+.featuredSlideshow {
+    display: flex;
+    justify-self: center;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-column: 3 /3;
+}
+
+.featuredImage {
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    width: 616px;
+    height: 353px;
+    background-color: chocolate;
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+}
+
+.featuredInfo {
+    background: linear-gradient(190DEG, #182836, #0B151E);
+    box-shadow: 0 0 10px black;
+    display: grid;
+    font-family: sans-serif;
+    width: 315px;
+    height: 353px;
+    color: white;
+    background-color: #0B151E;
+    grid-column: 3 / 3;
+    grid-row: 2 / 2;
+}
+
+.nextImage {
+    cursor: pointer;
+    width: 45px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, transparent, #1B2838);
+    height: 30%;
+    grid-column: 4 / 4;
+    grid-row: 2 / 2;
+}
+
+.previousImage {
+    cursor: pointer;
+    width: 45px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center; 
+    background-image: linear-gradient(to left, transparent, #1B2838);
+    height: 30%;
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+}
+
+.nextImage:hover {
+    background-image: linear-gradient(to right, transparent, #416999);
+}
+
+.previousImage:hover {
+    background-image: linear-gradient(to right, transparent, #416999);
+}
+
+.nextImage img {
+    height: 30%;
+}
+
+.previousImage img {
+    height: 30%;
+}
+
+.featuredSlider {
+    display: flex;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto) 1fr;
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+}
+
+.featuredSlider0, .featuredSlider1, .featuredSlider2, .featuredSlider3 {
+    height: 0.75rem;
+    width: 1rem;
+    background-color: #476173;
+    margin: 0.5rem 0.3rem 0 0.3rem;
+    border-radius: 20%;
+}
+
+.featuredSlider0:hover, .featuredSlider1:hover, .featuredSlider2:hover, .featuredSlider3:hover {
+    background-color: #9098a0;
+    cursor: pointer;
+}
+
+.slideshowImages {
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 160px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+}
+
+.slideshowImages:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.slideshowImages img {
+    height: 80px;
+    width: auto;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.previewTitle {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.previewNowAvailable {
+    display: flex;
+    align-self: flex-end;
+    font-size: 1.2em;
+    margin: 0;
+    margin-left: 1rem;
+    
+}
+
+.previewTopSeller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    width: 4rem;
+    height: 1.2rem;
+    font-size: 0.7em;
+    margin: 0;
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+    background-color: #394148;
+}
+
+.previewPrice {
+    font-size: 0.7em;
+    margin: 0;
+    margin-left: 1rem;
+    color: #ACDBF5;
+}
+
+[datatype='slider0'], [datatype='slider1'], [datatype='slider2'], [datatype='slider3'] {
+    background-color: #9098a0;
+}
+
