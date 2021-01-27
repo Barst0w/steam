@@ -16,10 +16,12 @@ function App() {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [username, setUsername] = useState('')
 
     const clearInputs = () => {
         setEmail('');
         setPassword('');
+        setUsername('');
     }
 
     const clearErrors = () => {
@@ -44,9 +46,17 @@ function App() {
                         break;
                 }
             });
+            db.collection('Users')
+                .get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {
+                        if (doc.data().Email === email) localStorage.setItem('username', doc.data().Username)
+                    })
+                })
+
             localStorage.setItem('about-chat', 'CHAT')
-            localStorage.setItem('username', 'user')
             localStorage.setItem('login-logout', 'Logout')
+            console.log(localStorage.getItem('username'))
     };
 
     const handleSignup = () => {
@@ -65,13 +75,20 @@ function App() {
                         break;
                 }
             });
+            db.collection('Users').add({
+                Username: username,
+                Email: email,
+            })
+            .then(() => {
+                alert('Your Registration is Complete')
+            })
     }
 
     const handleLogout = () => {
         fire.auth().signOut();
         localStorage.setItem('about-chat', '')
         localStorage.setItem('username', '')
-        localStorage.setItem('login-logout', 'Login')
+        localStorage.setItem('login-logout', '')
     }
 
     const authListener = () => {
@@ -79,7 +96,6 @@ function App() {
             if (user) {
                 clearInputs();
                 setUser(user);
-
             } else {
                 setUser('');
             }
@@ -89,6 +105,7 @@ function App() {
     useEffect(() => {
         authListener();
         if (localStorage.getItem('about-chat') !== '' && localStorage.getItem('about-chat') !== 'CHAT') localStorage.setItem('about-chat', '')
+        if (localStorage.getItem('login-logout') !== '' && localStorage.getItem('login-logout') !== 'Logout') localStorage.setItem('login-logout', '')
     }, [])
 
     return(
@@ -97,7 +114,7 @@ function App() {
             <BrowserRouter>
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/Login"><Login email={email} setEmail={setEmail} password={email} setPassword={setPassword} handleLogin={handleLogin} /></Route>
-                <Route exact path="/Signup"><Signup email={email} setEmail={setEmail} password={password} setPassword={setPassword} emailError={emailError} passwordError={passwordError} handleSignup={handleSignup} handleLogin={handleLogin}/></Route>
+                <Route exact path="/Signup"><Signup setUsername={setUsername} email={email} setEmail={setEmail} password={password} setPassword={setPassword} emailError={emailError} passwordError={passwordError} handleSignup={handleSignup} handleLogin={handleLogin}/></Route>
             </BrowserRouter>
             <Footer />
         </div>

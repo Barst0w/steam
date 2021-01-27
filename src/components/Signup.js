@@ -16,7 +16,7 @@ function Signup(props) {
                 <input type="text" onChange={(e) => props.setEmail(e.target.value)}></input>
                 <p className="errormessage">{props.emailError}</p>
                 <p className="loginText">Username</p>
-                <input type="text"></input>
+                <input type="text" onChange={(e) => props.setUsername(e.target.value)}></input>
                 <p className="loginText">Password</p>
                 <input type="text" onChange={(e) => props.setPassword(e.target.value)}></input>
                 <p className="errormessage">{props.passwordError}</p>

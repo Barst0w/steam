@@ -4,12 +4,7 @@ import logo from '../assets/img/logo.svg'
 function Navbar(props) {
     let username = '';
     let aboutChat = '';
-
-    const checkState = () => {
-        if (props.user) {
-            props.handleLogout()
-        }
-    }
+    let loginLogout = '';
 
     if (localStorage.getItem('username')) {
         username = <li className="profileBtn">{localStorage.getItem('username')}</li>
@@ -21,6 +16,12 @@ function Navbar(props) {
         aboutChat = <li className="aboutBtn">{localStorage.getItem('about-chat')}</li>
     } else {
         aboutChat = <li className="aboutBtn">ABOUT</li>;
+    }
+
+    if (localStorage.getItem('login-logout')) {
+        loginLogout = <li className="loginBtn" onClick={props.handleLogout}><a href="/Login">Logout</a></li>
+    } else {
+        loginLogout = <li className="loginBtn"><a href="/Login">Login</a></li>
     }
     
     return(
@@ -36,7 +37,7 @@ function Navbar(props) {
                 </ul>
                 <ul className="navbuttons2">
                     <li className="installSteamBtn">Install Steam</li>
-                    <li className="loginBtn" onClick={checkState}><a href="/Login">{localStorage.getItem('login-logout')}</a></li>
+                    {loginLogout}
                     <li className="languageBtn">language</li>
                 </ul>
             </div>
