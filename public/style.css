@@ -34,7 +34,7 @@ a {
 
 .navbuttons1 {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     grid-template-rows: 1fr auto 1fr;
     grid-column: 2 / 2;
     padding: 0;
@@ -58,7 +58,7 @@ a {
     margin: 1.6rem 1rem 0 0;
 }
 
-.storeBtn, .communityBtn, .aboutBtn, .supportBtn {
+.storeBtn, .communityBtn, .aboutBtn, .supportBtn, .profileBtn {
     grid-row: 2 / 2;
 }
 

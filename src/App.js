@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable default-case */
 import { BrowserRouter, Route } from 'react-router-dom'
-import React, { useState, useEffect } from 'react';
-import fire from './fire'
+import React, { useState, useEffect, useRef } from 'react';
+import { db, fire } from './fire'
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -16,7 +16,6 @@ function App() {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    const [hasAccount, setHasAccount] = useState(false);
 
     const clearInputs = () => {
         setEmail('');
@@ -45,6 +44,9 @@ function App() {
                         break;
                 }
             });
+            localStorage.setItem('about-chat', 'CHAT')
+            localStorage.setItem('username', 'user')
+            localStorage.setItem('login-logout', 'Logout')
     };
 
     const handleSignup = () => {
@@ -67,6 +69,9 @@ function App() {
 
     const handleLogout = () => {
         fire.auth().signOut();
+        localStorage.setItem('about-chat', '')
+        localStorage.setItem('username', '')
+        localStorage.setItem('login-logout', 'Login')
     }
 
     const authListener = () => {
@@ -74,6 +79,7 @@ function App() {
             if (user) {
                 clearInputs();
                 setUser(user);
+
             } else {
                 setUser('');
             }
@@ -82,11 +88,12 @@ function App() {
 
     useEffect(() => {
         authListener();
+        if (localStorage.getItem('about-chat') !== '' && localStorage.getItem('about-chat') !== 'CHAT') localStorage.setItem('about-chat', '')
     }, [])
 
     return(
         <div>
-            <Navbar user={user} handleLogout={handleLogout}/>
+            <Navbar user={user} handleLogout={handleLogout} />
             <BrowserRouter>
                 <Route exact path="/"><Home /></Route>
                 <Route exact path="/Login"><Login email={email} setEmail={setEmail} password={email} setPassword={setPassword} handleLogin={handleLogin} /></Route>
