@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Profile from './components/Profile';
 
 function App() {
     const [user, setUser] = useState('');
@@ -56,7 +57,6 @@ function App() {
 
             localStorage.setItem('about-chat', 'CHAT')
             localStorage.setItem('login-logout', 'Logout')
-            console.log(localStorage.getItem('username'))
     };
 
     const handleSignup = () => {
@@ -82,6 +82,7 @@ function App() {
             .then(() => {
                 alert('Your Registration is Complete')
             })
+            handleLogin()
     }
 
     const handleLogout = () => {
@@ -113,8 +114,9 @@ function App() {
             <Navbar user={user} handleLogout={handleLogout} />
             <BrowserRouter>
                 <Route exact path="/"><Home /></Route>
-                <Route exact path="/Login"><Login email={email} setEmail={setEmail} password={email} setPassword={setPassword} handleLogin={handleLogin} /></Route>
-                <Route exact path="/Signup"><Signup setUsername={setUsername} email={email} setEmail={setEmail} password={password} setPassword={setPassword} emailError={emailError} passwordError={passwordError} handleSignup={handleSignup} handleLogin={handleLogin}/></Route>
+                <Route exact path="/Login"><Login setEmail={setEmail} setPassword={setPassword} handleLogin={handleLogin} emailError={emailError} passwordError={passwordError}/></Route>
+                <Route exact path="/Signup"><Signup setUsername={setUsername} setEmail={setEmail} setPassword={setPassword} emailError={emailError} passwordError={passwordError} handleSignup={handleSignup}/></Route>
+                <Route exact path="/Profile"><Profile /></Route>
             </BrowserRouter>
             <Footer />
         </div>

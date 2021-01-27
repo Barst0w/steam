@@ -7,7 +7,7 @@ function Navbar(props) {
     let loginLogout = '';
 
     if (localStorage.getItem('username')) {
-        username = <li className="profileBtn">{localStorage.getItem('username')}</li>
+        username = <li className="profileBtn"><a href="/Profile">{localStorage.getItem('username')}</a></li>
     } else {
         username = '';
     }
@@ -19,7 +19,7 @@ function Navbar(props) {
     }
 
     if (localStorage.getItem('login-logout')) {
-        loginLogout = <li className="loginBtn" onClick={props.handleLogout}><a href="/Login">Logout</a></li>
+        loginLogout = <li className="loginBtn" onClick={props.handleLogout}><a href="/">Logout</a></li>
     } else {
         loginLogout = <li className="loginBtn"><a href="/Login">Login</a></li>
     }
