@@ -709,7 +709,6 @@ form button {
 
 .avatar {
     box-shadow: 0 0 0.3rem black;
-    background-color: pink;
     height: 164px;
     width: 164px;
     grid-column: 1 / 1;
@@ -897,6 +896,16 @@ form button {
 
 .avatars img {
     max-height: 100px;
+    max-width: 164px;
     margin-left: 5rem;
 }
 
+.avatars img:hover {
+    cursor: pointer;
+    background: linear-gradient(to left, rgb(67, 67, 241), #3491d8);
+}
+
+.selectedImage {
+    border: 1px solid black;
+    background: linear-gradient(to left, rgb(67, 67, 241), #3491d8);
+}

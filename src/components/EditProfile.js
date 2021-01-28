@@ -12,24 +12,42 @@ function EditProfile(props) {
         props.updateProfileStates()
     }, [])
 
+    const imageClick = (e) => {
+        console.log(e)
+        let activeimages = document.getElementsByClassName('selectedImage')
+        if (activeimages) {
+            for (let i = 0; i < activeimages.length; ++i ) {
+                activeimages[i].className = ''
+            }
+        }
+        e.className = 'selectedImage';
+        props.setimageid((e.attributes.datatype.value))
+    }
+
+    const editState = () => {
+         props.setCountry(document.getElementsByClassName('countryInput')[0].value)
+         props.setDescription(document.getElementsByClassName('descriptionInput')[0].value)
+         props.updateProfile()
+    }
+
     return(
         <div className="editProfilePage">
             <div className="profileForm">
                 <span className="formTitle">Edit Profile</span>
                 <p>Country:</p>
-                <input type="text" onChange={(e) => props.setCountry(e.target.value)} defaultValue={props.country}></input>
+                <input className="countryInput" type="text" onChange={(e) => props.setCountry(e.target.value)} defaultValue={localStorage.getItem('countryStorage')}></input>
                 <p>Description:</p>
-                <input type="text" onChange={(e) => props.setDescription(e.target.value)} defaultValue={props.description}></input>
+                <input className="descriptionInput" type="text" onChange={(e) => props.setDescription(e.target.value)} defaultValue={localStorage.getItem('descriptionStorage')}></input>
                 <p>Choose an Avatar:</p>
                 <div className="avatars">
-                    <img src={img1} alt=""></img>
-                    <img src={img2} alt=""></img>
-                    <img src={img3} alt=""></img>
-                    <img src={img4} alt=""></img>
-                    <img src={img5} alt=""></img>
-                    <img src={img6} alt=""></img>
+                    <img src={img1} alt="" onClick={(e) => imageClick(e.target)} datatype={1}></img>
+                    <img src={img2} alt="" onClick={(e) => imageClick(e.target)} datatype={2}></img>
+                    <img src={img3} alt="" onClick={(e) => imageClick(e.target)} datatype={3}></img>
+                    <img src={img4} alt="" onClick={(e) => imageClick(e.target)} datatype={4}></img>
+                    <img src={img5} alt="" onClick={(e) => imageClick(e.target)} datatype={5}></img>
+                    <img src={img6} alt="" onClick={(e) => imageClick(e.target)} datatype={6}></img>
                 </div>
-                <button className="saveChanges" onClick={props.updateProfile}>Save Changes</button>
+                <button className="saveChanges" onClick={editState}>Save Changes</button>
             </div>
         </div>
     )
