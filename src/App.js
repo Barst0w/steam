@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
+import EditProfile from './components/EditProfile';
 
 function App() {
     const [user, setUser] = useState('');
@@ -18,6 +19,8 @@ function App() {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [username, setUsername] = useState('')
+    const [country, setCountry] = useState('')
+    const [description, setDescription] = useState('')
 
     const clearInputs = () => {
         setEmail('');
@@ -92,6 +95,24 @@ function App() {
         localStorage.setItem('login-logout', '')
     }
 
+    const updateProfile = () => {
+        db.collection('Profiles').doc(localStorage.getItem('username')).set({
+            Country: country,
+            Description: description,
+        })
+        .then(() => {
+            alert('Profile Updated')
+        })
+    }
+
+    const updateProfileStates = () => {
+        db.collection('Profiles').doc(localStorage.getItem('username')).get().then((doc) => {
+            setCountry(doc.data().Country)
+            setDescription(doc.data().Description)
+        })
+        console.log(country)
+    }
+
     const authListener = () => {
         fire.auth().onAuthStateChanged(user => {
             if (user) {
@@ -114,9 +135,10 @@ function App() {
             <Navbar user={user} handleLogout={handleLogout} />
             <BrowserRouter>
                 <Route exact path="/"><Home /></Route>
+                <Route exact path="/EditProfile"><EditProfile updateProfileStates={updateProfileStates} updateProfile={updateProfile} setCountry={setCountry} setDescription={setDescription} country={country} description={description}/></Route>
                 <Route exact path="/Login"><Login setEmail={setEmail} setPassword={setPassword} handleLogin={handleLogin} emailError={emailError} passwordError={passwordError}/></Route>
                 <Route exact path="/Signup"><Signup setUsername={setUsername} setEmail={setEmail} setPassword={setPassword} emailError={emailError} passwordError={passwordError} handleSignup={handleSignup}/></Route>
-                <Route exact path="/Profile"><Profile /></Route>
+                <Route exact path="/Profile"><Profile country={country} description={description} updateProfileStates={updateProfileStates}/></Route>
             </BrowserRouter>
             <Footer />
         </div>
