@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/steam/static/js/main.5db81258.chunk.js",
-    "main.js.map": "/steam/static/js/main.5db81258.chunk.js.map",
+    "main.js": "/steam/static/js/main.2d5cf6c6.chunk.js",
+    "main.js.map": "/steam/static/js/main.2d5cf6c6.chunk.js.map",
     "runtime-main.js": "/steam/static/js/runtime-main.8fbe4419.js",
     "runtime-main.js.map": "/steam/static/js/runtime-main.8fbe4419.js.map",
-    "static/js/2.11cba4b2.chunk.js": "/steam/static/js/2.11cba4b2.chunk.js",
-    "static/js/2.11cba4b2.chunk.js.map": "/steam/static/js/2.11cba4b2.chunk.js.map",
+    "static/js/2.f0fd7abe.chunk.js": "/steam/static/js/2.f0fd7abe.chunk.js",
+    "static/js/2.f0fd7abe.chunk.js.map": "/steam/static/js/2.f0fd7abe.chunk.js.map",
     "index.html": "/steam/index.html",
-    "static/js/2.11cba4b2.chunk.js.LICENSE.txt": "/steam/static/js/2.11cba4b2.chunk.js.LICENSE.txt",
+    "static/js/2.f0fd7abe.chunk.js.LICENSE.txt": "/steam/static/js/2.f0fd7abe.chunk.js.LICENSE.txt",
     "static/media/1.png": "/steam/static/media/1.6c696ea4.png",
     "static/media/2.png": "/steam/static/media/2.cbcb15b6.png",
     "static/media/3.png": "/steam/static/media/3.e7372470.png",
@@ -44,7 +44,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8fbe4419.js",
-    "static/js/2.11cba4b2.chunk.js",
-    "static/js/main.5db81258.chunk.js"
+    "static/js/2.f0fd7abe.chunk.js",
+    "static/js/main.2d5cf6c6.chunk.js"
   ]
 }
